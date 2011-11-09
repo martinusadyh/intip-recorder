@@ -1,0 +1,15 @@
+Libvideo configuration :
+------------------------
+Tambahkan direktori *lib/libvideo* ke file /etc/ld.so.conf seperti ini:
+
+$ cat /etc/ld.so.conf
+/home/martinus/Desktop/app/lib/libvideo
+
+Setelah ditambahkan, jalankan perintah *ldconfig* dan coba cek *lib/jni/32/libv4l4j.so* apa sudah ke pointing atau belum dengan perintah *ldd lib/jni/32/lib4l4j.so* seperti ini :
+$ ldd libv4l4j.so
+	...
+	...
+	libvideo.so.0 => /home/martinus/Desktop/app/lib/libvideo/libvideo.so.0 (0xf766d000) 
+	...
+	...
+$
